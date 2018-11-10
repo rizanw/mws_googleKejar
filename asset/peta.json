@@ -1,7 +1,52 @@
 {
-  "name": "asset",
-  "version": "1.0.0",
-  "dependencies": {
-    
-  }
+  "places" : [
+    {
+      "lokasi": [-7.266712, 112.796374],
+      "restoran": "McDonalds Mulyosari",
+      "gambar": "asset/pict/mcdmulyos.jpg",
+      "review": "restoran spanyol di jakarta yang dekat dengan kantor saya"
+    },
+    {
+      "lokasi": [-7.266446, 112.796334],
+      "restoran": "KFC Mulyosari",
+      "gambar": "asset/pict/mcdmulyos.jpg",
+      "review": "restoran spanyol di jakarta yang dekat dengan kantor saya"
+    },
+    {
+      "lokasi": [-7.272629, 112.797207],
+      "restoran": "PHD Mulyosari",
+      "gambar": "asset/pict/mcdmulyos.jpg",
+      "review": "restoran spanyol di jakarta yang dekat dengan kantor saya"
+    },
+    {
+      "lokasi": [-7.266039, 112.796194],
+      "restoran": "PizzaHut Mulyosari",
+      "gambar": "asset/pict/mcdmulyos.jpg",
+      "review": "restoran spanyol di jakarta yang dekat dengan kantor saya"
+    },
+    {
+      "lokasi": [-7.280249, 112.774577],
+      "restoran": "Carl's Jr Kertajaya",
+      "gambar": "asset/pict/mcdmulyos.jpg",
+      "review": "restoran spanyol di jakarta yang dekat dengan kantor saya"
+    },
+    {
+      "lokasi": [-7.279949, 112.769219],
+      "restoran": "Richeese Factory Manyar",
+      "gambar": "asset/pict/mcdmulyos.jpg",
+      "review": "restoran spanyol di jakarta yang dekat dengan kantor saya"
+    },
+    {
+      "lokasi": [-7.279622, 112.766367],
+      "restoran": "PizzaHut Manyar",
+      "gambar": "asset/pict/mcdmulyos.jpg",
+      "review": "restoran spanyol di jakarta yang dekat dengan kantor saya"
+    },
+    {
+      "lokasi": [-7.279470, 112.765328],
+      "restoran": "McDonalds Manyar",
+      "gambar": "asset/pict/mcdmulyos.jpg",
+      "review": "restoran spanyol di jakarta yang dekat dengan kantor saya"
+    }
+  ]
 }
