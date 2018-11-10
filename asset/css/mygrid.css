@@ -1,0 +1,98 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+html, body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 50px 50px auto 50px;
+    height: 100%;
+}
+
+.menu {
+    background: #343a40;
+    grid-column: 1/-1;
+}
+
+#icon-logo {
+    width: 30px;
+    height: auto;
+    margin: 10px;
+}
+
+.header {
+    background: #ff9000;
+    grid-column: 1/-1;
+}
+
+#header-title {
+    top: 50%;
+    margin: 2px;
+}
+
+.sidebar {
+    background: #343a40;
+    grid-column: 1/2
+}
+
+#mypict {
+    width: 100%;
+    height: auto;
+}
+
+.konten {
+    background: lightpink;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    display: grid;
+    grid-gap: 4px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+.footer {
+    background: lightcyan;;
+    grid-column: 1/-1;
+}
+
+.konten {
+    background: #900C3E;
+    grid-column: 2/-1;
+    display: grid;
+    grid-gap: 4px;
+    grid-auto-rows: auto;
+}
+
+.subkonten {
+    grid-auto-columns: auto;
+    background: lightgrey;
+    grid-column: 1/-1;
+}
+
+
+iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100vw;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #mapid {
+            height: 500px;
+        }
+
+        .container {
+            display: grid;
+            height: 100%;
+            grid-gap: 4px;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: 60% 40%;
+        }
+
+        .peta {
+            grid-column: 1/-1;
+        }
+
+        .gambar {
+            background: green;
+            grid-column: 1/6;
+        }
+
+        .review {
+            background: yellow;
+            grid-column: 6/-1;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+            integrity="sha512nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+            crossorigin=""></script>
+</head>
+<body>
+<body>
+<div class='container'>
+    <div class='peta' id='mapid'></div>
+    <div class='gambar'>
+        Gambar Disini
+    </div>
+    <div class='review'>Tulis review disini</div>
+</div>
+<script>
+    let mymap = L.map('mapid').setView([-7.269619, 112.752205], 13);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org / ">OpenStreetMap</a> contributors, <a href = "https://creativecommons.org/licenses/by-sa/2.0/" > CC - BY - SA </a>,Imagery © <a href = "https://www.mapbox.com/" > Mapbox </a>',
+        maxZoom: 20,
+        id: 'mapbox.streets',
+        accessToken: 'pk.eyJ1Ijoicml6YW53IiwiYSI6ImNqb2E3YTVmZDFtNDQzd3B1aXRzOXl4N2YifQ.E7rC0PXjEIoi7U6e2FGCdg'
+    }).addTo(mymap);
+
+    let places = [
+        {"lokasi": [-7.266712, 112.796374], "restoran": "McDonalds Mulyosari"},
+        {"lokasi": [-7.266446, 112.796334], "restoran": "KFC Mulyosari"},
+        {"lokasi": [-7.272629, 112.797207], "restoran": "PHD Mulyosari"},
+        {"lokasi": [-7.266039, 112.796194], "restoran": "PizzaHut Mulyosari"},
+        {"lokasi": [-7.280249, 112.774577], "restoran": "Carl's Jr Kertajaya"},
+        {"lokasi": [-7.279949, 112.769219], "restoran": "Richeese Factory Manyar"},
+        {"lokasi": [-7.279622, 112.766367], "restoran": "PizzaHut Manyar"},
+        {"lokasi": [-7.279470, 112.765328], "restoran": "McDonalds Manyar"},
+    ]
+
+    for (var p of places) {
+        var marker = L.marker(p.lokasi).addTo(mymap).bindPopup(p.restoran);
+    }
+</script>
+</body>
+</body>
+</html>

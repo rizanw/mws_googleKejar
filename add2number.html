@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kalkulator</title>
+	<style type="text/css">
+		::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background: #888;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		body, html{
+			width: 100%;
+			height: 100%;
+		}
+		.btn-calc{
+			width: 50px;
+			height: 50px;
+			font-size: 25pt;
+			margin: 2px;
+			cursor: pointer;
+		}
+		.textview{
+			width: 314px;
+			margin: 5px;
+			font-size: 25pt;
+			padding: 5px;
+		}
+		.calc{
+			width: 100%;
+			position: absolute;
+			text-align: center;
+		}
+		table{
+			margin: 0px auto;
+		}
+	</style>
+</head>
+<body>
+	<div align="center">
+		<label>Calculator</label>
+	</div>
+	<div align="center" class="calc">
+		<form name="form" style="width: 100%">
+			<input type="textview" class="textview" name="textview" readonly>
+		</form>
+		<table>
+			<tr>
+				<td><input class="btn-calc" type="button" value="7" onclick="insert(7)"></td>
+				<td><input class="btn-calc" type="button" value="8" onclick="insert(8)"></td>
+				<td><input class="btn-calc" type="button" value="9" onclick="insert(9)"></td>
+				<td><input class="btn-calc" type="button" value="0" onclick="insert(0)"></td>
+				<td><input class="btn-calc" type="button" value="-" onclick="insert('-')"></td>
+				<td><input class="btn-calc" type="button" value="C" onclick="clean()"></td>
+			</tr>
+			<tr>
+				<td><input class="btn-calc" type="button" value="4" onclick="insert(4)"></td>
+				<td><input class="btn-calc" type="button" value="5" onclick="insert(5)"></td>
+				<td><input class="btn-calc" type="button" value="6" onclick="insert(6)"></td>
+				<td><input class="btn-calc" type="button" value="." onclick="insert('.')"></td>
+				<td><input class="btn-calc" type="button" value="&#43;" onclick="insert('+')"></td>
+				<td><input class="btn-calc" type="button" value="&#8592;" onclick="back()"></td>
+			</tr>
+			<tr>
+				<td><input class="btn-calc" type="button" value="1" onclick="insert(1)"></td>
+				<td><input class="btn-calc" type="button" value="2" onclick="insert(2)"></td>
+				<td><input class="btn-calc" type="button" value="3" onclick="insert(3)"></td>
+				<td><input class="btn-calc" type="button" value="&#247;" onclick="insert('/')"></td>
+				<td><input class="btn-calc" type="button" value="&#215;" onclick="insert('*')"></td>
+				<td><input class="btn-calc" type="button" value="&#61;" onclick="equal()"></td>
+			</tr>
+		</table>
+	<script type="text/javascript">
+		function kalkulator() {
+			let angka = document.querySelectorAll('input');
+			let operand = document.querySelector("select").value;
+			let i1= parseInt(angka[0].value) ; 
+			let i2= parseInt(angka[1].value) ; 
+			console.log(operand);
+			if (operand == '+') {
+				angka[3].value= i1 + i2;	
+			}else if (operand == '-') {
+				angka[3].value= i1 - i2;
+			}else if (operand == '*') {
+				angka[3].value= i1 * i2;
+			}else if (operand == '/') {
+				angka[3].value= i1 / i2;
+			}
+		}
+		let tombol = document.querySelector('#submit');
+		tombol.addEventListener('click', kalkulator);
+	</script>
+	<script type="text/javascript">
+		function insert(num){
+			document.form.textview.value = document.form.textview.value+num;
+		}
+		function clean(){
+			document.form.textview.value = "";
+		}
+		function equal(){
+			var exp = document.form.textview.value;
+			if(exp){
+				document.form.textview.value = eval(exp);
+			}
+		}
+		function back(){
+			var exp = document.form.textview.value;
+			document.form.textview.value = exp.substring(0,exp.length-1);
+		}
+	</script>
+</body>
+</html>
