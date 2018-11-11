@@ -39,7 +39,8 @@ async function f(url) {
     try {
         let response = await (fetch(url));
         let data = await response.json();
-        localStorage.setItem("places", data.places);
+        localStorage.setItem("places", JSON.stringify(data.places));
+
     }catch (e) {
         console.log(e);
     }
