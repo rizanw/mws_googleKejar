@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+Options -Indexes
+ErrorDocument 403  /404.html
+</IfModule>
